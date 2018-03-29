@@ -12,23 +12,24 @@ Buat environment dengan nama "sitienv" bisa juga dengan nama lain.
 ## Setup Database
 Buat Database ikuti langkah [tutorial database](http://www.digitalocean.com/community/tutorials/how-to-use-mysql-or-mariadb-with-your-django-application-on-ubuntu-14-04)
 
-## Edit file `sitienv/bin/activate`
+## Setup Virtual environment
 
-tambahkan setelah 'export VIRTUAL_ENV':
+Edit file `sitienv/bin/activate`, tambahkan setelah `export VIRTUAL_ENV`:
 
-export DATABASE_NAME='<your mysql database>'
+`export DATABASE_NAME='<your mysql database>'`
 
-export DATABASE_USER='<your mysql user>'
+`export DATABASE_USER='<your mysql user>'`
 
-export DATABASE_PASSWORD='<your mysql user password>'
+`export DATABASE_PASSWORD='<your mysql user password>'`
 
-tambahkan setelah 'unset VIRTUAL_ENV':
+tambahkan setelah `unset VIRTUAL_ENV`:
 
-unset DATABASE_NAME
+`unset DATABASE_NAME`
 
-unset DATABASE_USER
+`unset DATABASE_USER`
 
-unset DATABASE_PASSWORD
+`unset DATABASE_PASSWORD`
+
 
 ## Aktifkan Virtual Environment
 
@@ -49,4 +50,4 @@ migrate: `python manage.py migrate`
 
 runserver: `python manage.py runserver`
 
-Lalu buka browser 127.0.0.1:8000
+Lalu buka 127.0.0.1:8000 pada browser
