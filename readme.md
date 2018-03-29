@@ -46,6 +46,7 @@ Masuk ke folder project `cd web_siti`, lalu install requirement `pip install -r 
 
 ## Migrate dan Runserver
 migrate: `python manage.py migrate`
+
 runserver: `python manage.py runserver`
 
 Lalu buka browser 127.0.0.1:8000
