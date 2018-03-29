@@ -15,13 +15,19 @@ Buat Database ikuti langkah [tutorial database](http://www.digitalocean.com/comm
 ## Edit file `sitienv/bin/activate`
 
 tambahkan setelah 'export VIRTUAL_ENV':
+
 export DATABASE_NAME='<your mysql database>'
+
 export DATABASE_USER='<your mysql user>'
+
 export DATABASE_PASSWORD='<your mysql user password>'
 
 tambahkan setelah 'unset VIRTUAL_ENV':
+
 unset DATABASE_NAME
+
 unset DATABASE_USER
+
 unset DATABASE_PASSWORD
 
 ## Aktifkan Virtual Environment
