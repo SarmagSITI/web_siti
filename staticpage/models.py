@@ -25,6 +25,7 @@ class HomePage(SingletonModel):
     why_python = models.TextField(default= 'Karena Asyik')
 
 class AboutPage(SingletonModel):
+    gambar_logo = models.ImageField(null=True, blank=True, upload_to='images/staticpage')
     intro = models.TextField(default= 'Intro')
     visi = models.TextField(default= 'Visi')
     misi = models.TextField(default= 'Misi')
