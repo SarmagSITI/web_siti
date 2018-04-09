@@ -1,10 +1,10 @@
-import re
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.forms import Textarea, ValidationError, ModelForm, TextInput
 from django.forms.fields import Field
 from .models import UserProfile
+from phonenumber_field.formfields import PhoneNumberField
 
 class SignUpForm(UserCreationForm):
     username = forms.CharField(
@@ -34,6 +34,7 @@ class SignUpForm(UserCreationForm):
         return email
 
 class SignUpAddition(forms.ModelForm):
+    phone = PhoneNumberField(help_text='Gunakan +62.',)
     class Meta:
         model = UserProfile
         fields = ('gender', 'phone',)
