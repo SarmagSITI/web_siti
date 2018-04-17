@@ -51,3 +51,7 @@ migrate: `python manage.py migrate`
 runserver: `python manage.py runserver`
 
 Lalu buka 127.0.0.1:8000 pada browser
+
+## Beberapa wiki yang perlu dibaca:
+- Development Guide [link](https://github.com/SarmagSITI/web_siti/wiki/Development-Guide)
+- Fitur yang ingin dikembangkan [link](https://github.com/SarmagSITI/web_siti/wiki/Fitur)
