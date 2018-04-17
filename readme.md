@@ -8,6 +8,9 @@ Buat environment dengan nama "sitienv" bisa juga dengan nama lain.
 
 `python3 -m venv sitienv`
 
+atau dengan
+
+`virtualenv -p python3 sitienv`
 
 ## Setup Database
 Buat Database ikuti langkah [tutorial database](http://www.digitalocean.com/community/tutorials/how-to-use-mysql-or-mariadb-with-your-django-application-on-ubuntu-14-04)
