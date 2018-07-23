@@ -1,0 +1,10 @@
+
+{% load staticfiles %}
+<header>
+    <h1>{{article.title}}</h1>
+</header>
+<section class="main-content">
+    <div class="article-body">
+        {{article.content|safe}}
+    </div>
+</section>

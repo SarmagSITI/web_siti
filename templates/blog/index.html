@@ -1,0 +1,67 @@
+
+{% load staticfiles %}
+<div class="container-fluid body">
+     <div class="site-title">
+         <h1>The road so far.</h1>
+         <p>Hi, I'm an amateurcrastinator (not to be confused with procrastinator). <i>I'll explain later</i></p>
+     </div>
+
+     <div class="row">
+         <div class="col-md-8">
+             {% for article in articles %}
+                 <div class="container article-card">
+                     <article id="art-{{article.id}}">
+                         <header>
+                             <h2><a href="{{article.get_absolute_url}}">{{article.title}}</a></h2>
+                         </header>
+                         <section class="description">
+                             <p>{{article.description}}</p>
+                         </section>
+                         <footer>
+                             <span class="article-detail">
+                                 <img src="{% static 'blog/image/calendar-2x.png' %}">
+                                 <small>{{article.created_at|date:'d M Y'}} </small>
+                                 <img src="{% static 'blog/image/clock-2x.png' %}">
+                                 <small>{{article.created_at|date:'H:i'}} </small>
+                                 <img src="{% static 'blog/image/eye-2x.png' %}">
+                                 <small>{{article.views}}</small>
+                             </span>
+                         </footer>
+                     </article>
+                 </div>
+             {% endfor %}
+
+             <div class="pagination">
+                 <span class="step-links">
+                     {% if articles.has_previous %}
+                         <a href="?page={{articles.previous_page_number}}">Newer posts</a>
+                     {% endif %}
+
+                     <span class="current">
+                         Page {{articles.number}} of {{articles.paginator.num_pages}}
+                     </span>
+
+                     {% if articles.has_next %}
+                         <a href="?page={{articles.next_page_number}}">Older posts</a>
+                     {% endif %}
+                 </span>
+             </div>
+         </div>
+
+         <div class="col-md-4">
+             {% if user.is_authenticated %}
+             <div>
+                 Welcome, {{user.username}}<br>
+                 <a href="{% url 'admin:blog_article_add' %}" class="btn btn-primary btn-sm" role="button">Post new article</a>
+             </div>
+             {% endif %}
+             <div class="tag-list">
+                 <p>Tags:</p>
+                 {% for tag in tags %}
+                     <span><a href="{% url 'blog:tag' tag_name=tag.name %}" class="btn btn-light btn-sm" role="button"><small>{{tag.name}}</small></a></span>
+                 {% endfor %}
+             </div>
+         </div>
+     </div>
+
+</div>
